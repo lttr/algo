@@ -38,9 +38,11 @@ export function searchTwoNumbers(
   return [left + 1, right + 1];
 }
 
-console.log(searchTwoNumbers([2, 7, 11, 15], 9));
-console.log(searchTwoNumbers([2, 3, 4], 6));
-console.log(searchTwoNumbers([-1, 0], -1));
-console.log(searchTwoNumbers([0, 0], 0));
-console.log(searchTwoNumbers([2, 7, 11, 15], 18));
-console.log(searchTwoNumbers([2, 7, 11, 15], 26));
+if (import.meta.main) {
+  console.log(searchTwoNumbers([2, 7, 11, 15], 9));
+  console.log(searchTwoNumbers([2, 3, 4], 6));
+  console.log(searchTwoNumbers([-1, 0], -1));
+  console.log(searchTwoNumbers([0, 0], 0));
+  console.log(searchTwoNumbers([2, 7, 11, 15], 18));
+  console.log(searchTwoNumbers([2, 7, 11, 15], 26));
+}
