@@ -14,29 +14,29 @@
 
 export function firstBadVersion(isBadVersion: (v: number) => boolean) {
   function versionForIndex(x: number) {
-    return x + 1;
+    return x + 1
   }
   return function (n: number) {
-    let left = 0;
-    let right = n;
-    let mid = 0;
+    let left = 0
+    let right = n
+    let mid = 0
     while (left <= right) {
-      mid = Math.floor(left + (right - left) / 2);
+      mid = Math.floor(left + (right - left) / 2)
       if (
         isBadVersion(versionForIndex(mid)) &&
         !isBadVersion(versionForIndex(mid - 1))
       ) {
-        break;
+        break
       } else if (isBadVersion(versionForIndex(mid))) {
-        right = mid - 1;
+        right = mid - 1
       } else {
-        left = mid + 1;
+        left = mid + 1
       }
     }
-    return mid + 1;
-  };
+    return mid + 1
+  }
 }
 
 if (import.meta.main) {
-  console.log(firstBadVersion((v) => (v >= 4 ? true : false))(5));
+  console.log(firstBadVersion((v) => (v >= 4 ? true : false))(5))
 }

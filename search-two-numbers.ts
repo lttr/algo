@@ -22,27 +22,27 @@ export function searchTwoNumbers(
   //   }
   // }
 
-  let left = 0;
-  let right = array.length - 1;
+  let left = 0
+  let right = array.length - 1
   while (true) {
-    const sum = array[left] + array[right];
+    const sum = array[left] + array[right]
     if (sum < target) {
-      left++;
+      left++
     } else if (sum > target) {
-      right--;
+      right--
     } else {
-      break;
+      break
     }
   }
 
-  return [left + 1, right + 1];
+  return [left + 1, right + 1]
 }
 
 if (import.meta.main) {
-  console.log(searchTwoNumbers([2, 7, 11, 15], 9));
-  console.log(searchTwoNumbers([2, 3, 4], 6));
-  console.log(searchTwoNumbers([-1, 0], -1));
-  console.log(searchTwoNumbers([0, 0], 0));
-  console.log(searchTwoNumbers([2, 7, 11, 15], 18));
-  console.log(searchTwoNumbers([2, 7, 11, 15], 26));
+  console.log(searchTwoNumbers([2, 7, 11, 15], 9))
+  console.log(searchTwoNumbers([2, 3, 4], 6))
+  console.log(searchTwoNumbers([-1, 0], -1))
+  console.log(searchTwoNumbers([0, 0], 0))
+  console.log(searchTwoNumbers([2, 7, 11, 15], 18))
+  console.log(searchTwoNumbers([2, 7, 11, 15], 26))
 }

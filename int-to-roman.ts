@@ -23,39 +23,39 @@ const intToRomanMap = new Map<number, string>([
   [500, "D"],
   [900, "CM"],
   [1000, "M"],
-]);
+])
 
 export function intToRoman(n: number): string {
-  const result: string[] = [];
+  const result: string[] = []
   function partToRoman(integer: number) {
     if (intToRomanMap.has(integer)) {
-      result.push(intToRomanMap.get(integer)!);
-      return;
+      result.push(intToRomanMap.get(integer)!)
+      return
     }
-    const number = integer;
-    const intToMapReversed = [...intToRomanMap.entries()].reverse();
+    const number = integer
+    const intToMapReversed = [...intToRomanMap.entries()].reverse()
     for (const [key, value] of intToMapReversed) {
       if (number - key > 0) {
-        result.push(value);
-        partToRoman(number - key);
-        break;
+        result.push(value)
+        partToRoman(number - key)
+        break
       }
     }
   }
-  partToRoman(n);
-  return result.join("");
+  partToRoman(n)
+  return result.join("")
 }
 
 function process(max: number) {
-  const numbers = Array.from(Array(max), (_, i) => i + 1);
-  let sum = 0;
+  const numbers = Array.from(Array(max), (_, i) => i + 1)
+  let sum = 0
   for (const number of numbers) {
-    const r = intToRoman(number);
-    sum += (r.match(/X/g) || []).length;
+    const r = intToRoman(number)
+    sum += (r.match(/X/g) || []).length
   }
-  return sum;
+  return sum
 }
 
 if (import.meta.main) {
-  console.log(process(2660));
+  console.log(process(2660))
 }

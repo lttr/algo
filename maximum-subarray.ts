@@ -4,10 +4,10 @@
 // return its sum.
 
 export function maximumSubarray(nums: number[]): number {
-  let max = nums[0];
+  let max = nums[0]
   for (let i = 1; i < nums.length; i++) {
-    nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
-    max = Math.max(max, nums[i]);
+    nums[i] = Math.max(nums[i], nums[i] + nums[i - 1])
+    max = Math.max(max, nums[i])
   }
-  return max;
+  return max
 }

@@ -10,29 +10,29 @@
 // there is a closing ‘]’ before the closing ‘(‘
 
 export function isBalanced(input: string) {
-  const stack: string[] = [];
+  const stack: string[] = []
   for (const char of input) {
-    const last = stack.at(-1);
+    const last = stack.at(-1)
     if (last) {
       if (
         (char === "]" && last === "[") ||
         (char === ")" && last === "(") ||
         (char === "}" && last === "{")
       ) {
-        stack.pop();
+        stack.pop()
       } else {
-        stack.push(char);
+        stack.push(char)
       }
     } else {
-      stack.push(char);
+      stack.push(char)
     }
     if (import.meta.main) {
-      console.log(stack);
+      console.log(stack)
     }
   }
-  return stack.length === 0;
+  return stack.length === 0
 }
 
 if (import.meta.main) {
-  isBalanced("(((){}))");
+  isBalanced("(((){}))")
 }
