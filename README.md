@@ -1,4 +1,4 @@
-# My algoritmic solutions
+# My algorithmic solutions
 
 Solving some algoritmic problems as I came accross them.
 
